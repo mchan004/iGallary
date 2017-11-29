@@ -78,13 +78,27 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="0Ym-6V-N2x">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="0Ym-6V-N2x" customClass="ImageCollectionViewCell" customModule="icamera" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="114" height="107"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="114" height="107"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lND-uz-JjB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="114" height="107"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="lND-uz-JjB" firstAttribute="top" secondItem="0Ym-6V-N2x" secondAttribute="top" id="2qP-ho-Mb9"/>
+                                            <constraint firstAttribute="bottom" secondItem="lND-uz-JjB" secondAttribute="bottom" id="9Gx-Z1-zJ8"/>
+                                            <constraint firstAttribute="trailing" secondItem="lND-uz-JjB" secondAttribute="trailing" id="agx-q5-gMS"/>
+                                            <constraint firstItem="lND-uz-JjB" firstAttribute="leading" secondItem="0Ym-6V-N2x" secondAttribute="leading" id="q9v-fW-tcx"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="image" destination="lND-uz-JjB" id="71O-h4-ENf"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -109,6 +123,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="5Rd-NC-IpU" id="i1M-hw-Vwk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YxM-dl-Q42" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
